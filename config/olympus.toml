@@ -1,0 +1,20 @@
+[system]
+name = "OLYMPUS"
+mode = "production"
+log_to_console = true
+
+[pipeline]
+signal_seed = 42
+max_signals_per_tick = 64
+
+[themis]
+proposal_confidence_floor = 0.55
+high_urgency_threshold = 0.75
+
+[prometheus]
+monte_carlo_trials = 1000
+timeline_days = 90
+
+[dashboard]
+auto_authorize_noncritical = true
+refresh_ms = 250

@@ -1,0 +1,76 @@
+services:
+  olympus-core:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: olympus-core
+    networks:
+      - olympus_net
+
+  postgres-defense:
+    image: postgres:16
+    environment:
+      POSTGRES_PASSWORD: stub
+      POSTGRES_DB: defense
+    networks:
+      - olympus_net
+
+  postgres-education:
+    image: postgres:16
+    environment:
+      POSTGRES_PASSWORD: stub
+      POSTGRES_DB: education
+    networks:
+      - olympus_net
+
+  postgres-health:
+    image: postgres:16
+    environment:
+      POSTGRES_PASSWORD: stub
+      POSTGRES_DB: health
+    networks:
+      - olympus_net
+
+  postgres-foreign:
+    image: postgres:16
+    environment:
+      POSTGRES_PASSWORD: stub
+      POSTGRES_DB: foreign
+    networks:
+      - olympus_net
+
+  postgres-resources:
+    image: postgres:16
+    environment:
+      POSTGRES_PASSWORD: stub
+      POSTGRES_DB: resources
+    networks:
+      - olympus_net
+
+  postgres-governance:
+    image: postgres:16
+    environment:
+      POSTGRES_PASSWORD: stub
+      POSTGRES_DB: governance
+    networks:
+      - olympus_net
+
+  postgres-local:
+    image: postgres:16
+    environment:
+      POSTGRES_PASSWORD: stub
+      POSTGRES_DB: local
+    networks:
+      - olympus_net
+
+  postgres-technology:
+    image: postgres:16
+    environment:
+      POSTGRES_PASSWORD: stub
+      POSTGRES_DB: technology
+    networks:
+      - olympus_net
+
+networks:
+  olympus_net:
+    driver: bridge
